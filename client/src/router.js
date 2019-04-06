@@ -22,7 +22,7 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
     },
     {
-      path: '/assetCategory/:id',
+      path: '/assetCategory/:type',
       name: 'AssetCategory',
       props: true,
       component: () => import('./views/AssetCategory.vue')
