@@ -50,11 +50,11 @@
                             },
                             {
                                 "photoID": 66788,
-                                "URL":"https://marshcdn.aws.com/assets/photos/66788"
+                                "URL": "https://marshcdn.aws.com/assets/photos/66788"
                             },
                             {
                                 "photoID": 66998,
-                                "URL":"https://marshcdn.aws.com/assets/photos/66998"
+                                "URL": "https://marshcdn.aws.com/assets/photos/66998"
                             }
                         ]
                     },
@@ -69,11 +69,11 @@
                             },
                             {
                                 "photoID": 66543,
-                                "URL":"https://marshcdn.aws.com/assets/photos/66543"
+                                "URL": "https://marshcdn.aws.com/assets/photos/66543"
                             },
                             {
                                 "photoID": 66542,
-                                "URL":"https://marshcdn.aws.com/assets/photos/66542"
+                                "URL": "https://marshcdn.aws.com/assets/photos/66542"
                             }
                         ]
                     },
@@ -88,11 +88,11 @@
                             },
                             {
                                 "photoID": 66549,
-                                "URL":"https://marshcdn.aws.com/assets/photos/66549"
+                                "URL": "https://marshcdn.aws.com/assets/photos/66549"
                             },
                             {
                                 "photoID": 66547,
-                                "URL":"https://marshcdn.aws.com/assets/photos/66547"
+                                "URL": "https://marshcdn.aws.com/assets/photos/66547"
                             }
                         ]
                     }
@@ -109,6 +109,5 @@
                 ]
             }
         ]
-
     }
 }
