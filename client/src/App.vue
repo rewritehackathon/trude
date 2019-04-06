@@ -12,17 +12,11 @@
 
 <script>
 import ToolbarComp from "@/components/ToolbarComp.vue";
-import mockData from "../insurancecustomerdata.js";
 
 export default {
   name: "App",
   components: {
     ToolbarComp
-  },
-  data() {
-    return {
-      mockData: mockData
-    };
   }
 };
 </script>
