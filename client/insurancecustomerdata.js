@@ -99,7 +99,7 @@ export default {
                         "photos": [
                             {
                                 "photoID": 66544,
-                                "URL": "https://images-na.ssl-images-amazon.com/images/I/81k6HHKTP0L._SL1500_.jpg"
+                                "URL": ""
                             },
                         ]
                     },
