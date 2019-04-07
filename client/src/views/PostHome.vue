@@ -2,7 +2,7 @@
 <template>
   <div>
   <v-layout row align-center>
-    <v-flex>
+    <v-flex class='page-title'>
       <h2>FEMA Alert: {{this.$store.state.FEMA.incidentType}}</h2>
       <span>{{this.incidentBegin}} - </span>
       <span>{{this.incidentEnd}}</span>
@@ -11,19 +11,15 @@
   </v-layout>
     <v-layout row align-center justify-center>
       <v-flex xs6 grow>
-        <v-btn>
-          <router-link to= "/confirmCancelled">
+        <v-btn to ='/claimCancelled' class='nav-btn'>
             Discard Claim
-          </router-link>
         </v-btn>
       </v-flex>
     </v-layout>
     <v-layout row align-center justify-center>
       <v-flex xs6 grow>
-        <v-btn>
-          <router-link to="/verify">
+        <v-btn to='/verify' class = 'nav-btn'>
           Finalize Claim
-        </router-link>
         </v-btn>
       </v-flex>
     </v-layout>
@@ -38,8 +34,13 @@ export default {
   components: {
   },
   computed: {
-
-  }
+    incidentBegin: function(){
+      return moment(this.$store.state.FEMA.incidentBeginDate).format("dddd, MMMM Do YYYY")
+    },
+    incidentEnd: function(){
+      return moment(this.$store.state.FEMA.incidentEndDate).format("dddd, MMMM Do YYYY")
+    }
+  },
 }
 </script>
 

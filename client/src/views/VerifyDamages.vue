@@ -1,13 +1,13 @@
 <template>
   <div>
     <v-layout>
-      <v-flex>
+      <v-flex class='page-title'>
         <h3>Document Asset Damage</h3>
       </v-flex>
     </v-layout>
     <v-layout>
       <v-flex>
-        <v-btn color="primary" @click="openEditDialog(item)" >
+        <v-btn class='nav-btn' @click="openEditDialog(item)">
           Add Photo
         </v-btn>
       </v-flex>
@@ -22,19 +22,21 @@
           </template>
           <v-card v-for="item in category">
             <v-card-text>
-              <v-layout row align-center justify-space-between>
-                <v-flex>
-                  <span>Claimed:</span>
+              <v-layout row align-center>
+                <v-flex shrink>
+                  <span class='control-label'>Claimed:</span>
                   <v-switch
                   v-model="item.isClaimed">
                   </v-switch>
                 </v-flex>
-                <v-flex>
-                  {{item.name}}
+                <v-flex class = 'item-name' grow>
+                  {{ item.name.length > 35 ? item.name.substring(0, 22) + "..." : item.name}}
                 </v-flex>
-                <v-flex justify-end>
-                  Photographed:
-                  <v-checkbox v-model="item.isDocumented" :disabled="!item.isClaimed">
+                <v-flex justify-end shrink>
+                  <div class='photo-check control-label'>
+                    Photographed:
+                  </div>
+                  <v-checkbox v-model="item.isDocumented" class='photo-check' :disabled="!item.isClaimed">
                   </v-checkbox>
                 </v-flex>
             </v-layout>
@@ -46,10 +48,8 @@
     </v-layout>
     <v-layout>
       <v-flex>
-        <v-btn v-if="allDocumented">
-          <router-link to="/confirm">
+        <v-btn v-if="allDocumented" class='nav-btn' to='/confirm'>
             Finalize Claim
-          </router-link>
         </v-btn>
 
                     <!-- Add Photo Dialog -->
@@ -117,4 +117,22 @@ export default {
 </script>
 
 <style>
+div .v-expansion-panel__header{
+  color: var(--v-primary-darken2)
+}
+.v-input--switch, .v-input--checkbox{
+   margin-top:0px !important;
+ }
+ .photo-check{
+   justify-content: flex-end;
+   text-align: right;
+ }
+ .control-label{
+   color: var(--v-accent-lighten2)
+ }
+ .item-name{
+   text-align: left;
+   color: var(--v-accent-darken1);
+   font-size: 1.2em;
+ }
 </style>

@@ -62,5 +62,13 @@ footer{
 }
 .nav-btn {
   width: 100%;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  color: var(--v-primary-darken1) !important;
+}
+.page-title{
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  color: white;
 }
 </style>

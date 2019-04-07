@@ -13,8 +13,9 @@ Vue.use(Vuetify, {
   theme: {
     primary: "#D44091",
     secondary:	"#F8A41F",
-    accent: "#722859",
-    error: colors.red.accent3
+    accent: "#993476",
+    error: colors.red.accent3,
+
   },
   options: {
   customProperties: true

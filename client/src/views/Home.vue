@@ -2,7 +2,7 @@
 <template>
   <div>
   <v-layout row align-center>
-    <v-flex class = "white--text">
+    <v-flex class = "white--text page-title">
       <h2>FEMA Alert: {{this.$store.state.FEMA.incidentType}}</h2>
       <span>{{this.incidentBegin}} - </span>
       <span>{{this.incidentEnd}}</span>
@@ -11,14 +11,14 @@
   </v-layout>
     <v-layout row align-center justify-center>
       <v-flex xs6 grow>
-        <v-btn color="accent" >
+        <v-btn class = 'nav-btn'>
           Contact Info
         </v-btn>
       </v-flex>
     </v-layout>
     <v-layout row align-center justify-center>
       <v-flex xs6 grow>
-        <v-btn color="accent" v-on:click="goToCoverages">
+        <v-btn class = 'nav-btn' v-on:click="goToCoverages">
           Coverages
         </v-btn>
       </v-flex>
