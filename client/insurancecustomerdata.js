@@ -24,7 +24,7 @@ export default {
                 "policyType": "Business",
                 "policyStart": "01-01-2019",
                 "policyEnd": "01-01-2020",
-                "premium": "$6500.00",
+                "premium": "6500",
                 "businessID": 143338,
                 "coverage": [
                     {
@@ -43,7 +43,7 @@ export default {
                         "name": "IlFornino Stainless Steel Wood Fire Pizza Oven",
                         "assetType": "Appliance",
                         "serialNumber": "1234RTL09239001",
-                        "value": "$75,000",
+                        "value": "75000",
                         "photos": [
                             {
                                 "photoID": 66787,
@@ -63,7 +63,7 @@ export default {
                         "name": "Advance TabCo Bar",
                         "assetType": "Furniture",
                         "serialNumber": "1234RTL092930001",
-                        "value": "$20,000",
+                        "value": "20000",
                         "photos": [
                             {
                                 "photoID": 66544,
@@ -83,7 +83,7 @@ export default {
                         "name": "Flash Furniture 30'' Square Black Laminate Table Set with 4 Wood Slat",
                         "assetType": "Furniture",
                         "serialNumber": "1234RTL0916010001",
-                        "value": "$350",
+                        "value": "350",
                         "photos": [
                             {
                                 "photoID": 66544,
@@ -95,7 +95,7 @@ export default {
                         "name": "Oklahoma Sound Aristocrat Floor Lectern, Mahogany",
                         "assetType": "Furniture",
                         "serialNumber": "1234RTL0916010001",
-                        "value": "$350",
+                        "value": "350",
                         "photos": [
                             {
                                 "photoID": 66544,
@@ -106,7 +106,7 @@ export default {
                     {
                         "name": "2012 Peugeot Blue Van",
                         "assetType": "Transport Vehicle",
-                        "value": "$42,000",
+                        "value": "42000",
                         "serialNumber": "1234THK2893001",
                         "photos": [
                             {

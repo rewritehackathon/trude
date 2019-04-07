@@ -31,7 +31,13 @@ export default new Router({
       path:'/coverages',
       name:'Coverages',
       props:false,
-      component: ()=> import('./views/Coverages.vue') 
+      component: ()=> import('./views/Coverages.vue')
+    },
+    {
+      path:'/assets',
+      name: 'Assets',
+      props: false,
+      component: ()=> import ('./views/Assets.vue')
     }
   ]
 })

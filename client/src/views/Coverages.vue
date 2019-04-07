@@ -20,7 +20,9 @@
           </v-card-text>
           <v-card-actions>
             <v-btn flat>
-              Verify Declarations
+              <router-link to="/assets">
+                Verify Declarations
+              </router-link>
             </v-btn>
           </v-card-actions>
         </v-card>
