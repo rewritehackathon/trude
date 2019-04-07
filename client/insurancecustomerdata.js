@@ -42,11 +42,12 @@ export default {
                     {
                         "name": "IlFornino Stainless Steel Wood Fire Pizza Oven",
                         "assetType": "Appliance",
+                        "serialNumber": "1234RTL09239001",
                         "value": "$75,000",
                         "photos": [
                             {
                                 "photoID": 66787,
-                                "URL": "https://marshcdn.aws.com/assets/photos/66787"
+                                "URL": "https://cdn.shopify.com/s/files/1/0018/0492/7094/products/51lq5tfFwRL_800x.jpg?v=1534927420"
                             },
                             {
                                 "photoID": 66788,
@@ -61,15 +62,16 @@ export default {
                     {
                         "name": "Advance TabCo Bar",
                         "assetType": "Furniture",
+                        "serialNumber": "1234RTL092930001",
                         "value": "$20,000",
                         "photos": [
                             {
                                 "photoID": 66544,
-                                "URL": "https://marshcdn.aws.com/assets/photos/66544"
+                                "URL": "https://cdnimg.webstaurantstore.com/images/products/large/179514/454798.jpg"
                             },
                             {
                                 "photoID": 66543,
-                                "URL": "https://marshcdn.aws.com/assets/photos/66543"
+                                "URL": "https://cdnimg.webstaurantstore.com/images/products/large/179514/454798.jpg"
                             },
                             {
                                 "photoID": 66542,
@@ -78,13 +80,38 @@ export default {
                         ]
                     },
                     {
+                        "name": "Flash Furniture 30'' Square Black Laminate Table Set with 4 Wood Slat",
+                        "assetType": "Furniture",
+                        "serialNumber": "1234RTL0916010001",
+                        "value": "$350",
+                        "photos": [
+                            {
+                                "photoID": 66544,
+                                "URL": "https://images-na.ssl-images-amazon.com/images/I/81k6HHKTP0L._SL1500_.jpg"
+                            },
+                        ]
+                    },
+                    {
+                        "name": "Oklahoma Sound Aristocrat Floor Lectern, Mahogany",
+                        "assetType": "Furniture",
+                        "serialNumber": "1234RTL0916010001",
+                        "value": "$350",
+                        "photos": [
+                            {
+                                "photoID": 66544,
+                                "URL": "https://images-na.ssl-images-amazon.com/images/I/81k6HHKTP0L._SL1500_.jpg"
+                            },
+                        ]
+                    },
+                    {
                         "name": "2012 Peugeot Blue Van",
                         "assetType": "Transport Vehicle",
                         "value": "$42,000",
+                        "serialNumber": "1234THK2893001",
                         "photos": [
                             {
                                 "photoID": 66548,
-                                "URL": "https://marshcdn.aws.com/assets/photos/66548"
+                                "URL": "https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/Y6wAAOSwIOtbXHQd/$_86.JPG"
                             },
                             {
                                 "photoID": 66549,
