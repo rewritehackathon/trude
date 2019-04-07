@@ -3,7 +3,12 @@
     <ToolbarComp />
     <v-content>
       <v-container fluid>
-        <router-view></router-view>
+        <transition
+          name="fade"
+          mode="out-in"
+          >
+          <router-view/>
+        </transition>
       </v-container>
     </v-content>
     <v-footer app></v-footer>
@@ -29,6 +34,9 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+footer{
+  background-color: var(--v-accent-base) !important;
+}
 #nav {
   padding: 30px;
 }
@@ -40,5 +48,19 @@ export default {
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: 0.25s;
+  transition-property: opacity;
+  transition-timing-function: ease;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0
+}
+.nav-btn {
+  width: 100%;
 }
 </style>

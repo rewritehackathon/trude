@@ -30,10 +30,8 @@
     </v-expansion-panel>
   </v-layout> -->
   <v-layout v-for="coverage in coverages">
-    <v-btn>
-      <router-link to="/assets">
+    <v-btn to="/assets">
         {{coverage.name}}
-      </router-link>
     </v-btn>
   </v-layout>
   </div>
@@ -44,6 +42,11 @@ export default {
   computed: {
     coverages: function() {
       return this.$store.state.mockData.customer.policies[0].coverage;
+    }
+  },
+  methods: {
+    goToAssets: function() {
+      this.$router.push("/assets");
     }
   }
 };

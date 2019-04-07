@@ -7,7 +7,7 @@
     </v-layout>
     <v-layout>
       <v-flex>
-        <v-btn>
+        <v-btn @click="openEditDialog(item)" >
           Add Photo
         </v-btn>
       </v-flex>
@@ -80,7 +80,8 @@ import EditAssetForm from "@/components/EditAssetForm.vue";
 export default {
   data() {
     return {
-      editAssetModal: false
+      editAssetModal: false,
+      assetToedit: null
     };
   },
   computed: {
@@ -96,6 +97,17 @@ export default {
         }
       });
       return allDoc;
+    }
+  },
+  methods: {
+    openEditDialog(item) {
+      this.editAssetModal = true;
+      this.assetToedit = item;
+      console.log("it fired: ", item);
+    },
+    closeEditDialog() {
+      this.editAssetModal = false;
+      this.assetToedit = null;
     }
   }
 };
