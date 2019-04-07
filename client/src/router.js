@@ -26,6 +26,36 @@ export default new Router({
       name: 'AssetCategory',
       props: true,
       component: () => import('./views/AssetCategory.vue')
+    },
+    {
+      path:'/coverages',
+      name:'Coverages',
+      props:false,
+      component: ()=> import('./views/Coverages.vue')
+    },
+    {
+      path:'/assets',
+      name: 'Assets',
+      props: false,
+      component: ()=> import ('./views/Assets.vue')
+    },
+    {
+      path: '/after',
+      name: 'PostHome',
+      props: false,
+      component: ()=> import ('./views/PostHome.vue')
+    },
+    {
+      path: '/verify',
+      name: 'VerifyDamages',
+      props: false,
+      component: ()=> import ('./views/VerifyDamages.vue')
+    },
+    {
+      path: '/confirm',
+      name: 'ClaimConfirmed',
+      props: false,
+      component: ()=> import ('./views/Confirm.vue')
     }
   ]
 })

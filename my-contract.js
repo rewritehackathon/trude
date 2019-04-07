@@ -1,5 +1,21 @@
-export default {
-    "customer": {
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+'use strict';
+
+const { Contract } = require('fabric-contract-api');
+
+class MyContract extends Contract {
+
+    /**
+   *
+   * addMember
+   *
+   * When a member to the blockchain - can be insurer.
+   * @param id - the unique id to identify the customer
+   * @param value - customer details in json format
+   * "customer": {
         "firstName": "Janet",
         "lastName": "Brown",
         "address": "222 W. Lake Avenue",
@@ -152,4 +168,53 @@ export default {
             }
         ]
     }
+   * @param polices - address of org
+   * @param  - can be grower, shipper, trader and retailer
+   */
+
+    async addClaim(ctx, id, value) {
+        console.info('addClaim invoked');
+
+        await ctx.stub.putState(id, Buffer.from(JSON.stringify(value)));
+        console.info('updated ledger with key: ' + id + 'and value: ');
+        console.info(JSON.stringify(value));
+
+    }
+
+    async init(ctx) {
+        console.info('init invoked');
+
+    }
+
+    /**
+   *
+   * updateClaim
+   *
+   * Transaction used when:
+   *  Customer accepts claim.  Customer reviewed and accepted information on pre-claim. Claim status will change
+   *  to accepted. Any claim changes such as asset updates will be updated.
+   *
+   *  Insurer updates claim status.  Claim status and content updated as claims goes thru adjudication process.
+   *  Status could change to processing, pending, paid etc.
+
+   */
+    async updateClaim(ctx, id, value) {
+        console.info('updateClaim called');
+        await ctx.stub.putState(id, Buffer.from(JSON.stringify(value)));
+        console.info('updated ledger with claim status accepted');
+    }
+
+    /*
+    * getClaims
+    * 
+    */
+    async getClaims(ctx, id ) {
+
+        //get claims identified by customer id
+        let claim = await ctx.stub.getState(id);
+
+        return claim;
+    }
 }
+
+module.exports = MyContract;
