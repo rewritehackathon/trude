@@ -7,11 +7,9 @@
     </v-layout>
     <v-layout row v-for="type in assetTypes">
       <v-flex>
-        <v-btn>
-          <router-link :to ="{name: 'AssetCategory', params:{type: type}}">
+          <v-btn class = 'nav-btn':to ="`/assetCategory/${type}`">
             {{type}}
-          </router-link>
-        </v-btn>
+          </v-btn>
     </v-flex>
     </v-layout>
   </div>
