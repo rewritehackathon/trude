@@ -3,7 +3,7 @@
         <v-layout>
             <v-flex>
               <v-card>
-                    <v-card-title primary-title class="primary headline white--text" >
+                    <v-card-title primary-title class="accent headline white--text" >
                         <h1> {{assetType}} </h1>
                     </v-card-title>
                 <v-card>
@@ -16,7 +16,7 @@
                         :key="i"
                         >
                         <template v-slot:header >
-                            <v-card-text>
+                            <v-card-text class="bye_padding" >
                               <p class="text-lg-left">
                                     <v-icon v-if="item.photos[0].URL" left class="green--text accent-4">
                                         photo_camera
@@ -35,20 +35,20 @@
                             :width="'100%'"
                             ></v-img>
                             <v-card-text> 
-                                <v-btn @click.stop="openEditDialog(item)" icon color="primary" large  >
+                                <v-btn @click.stop="openEditDialog(item)" icon color="accent" large  >
                                     <v-icon center >
                                         add_a_photo
                                     </v-icon>
                                 </v-btn>
                               <p class="text-md-left" >
                                 <div>
-                                    <strong class="primary--text" > Asset:</strong> {{ item.name }}
+                                    <strong class="accent--text" > Asset:</strong> {{ item.name }}
                                 </div>
                                 <div>
-                                    <strong class="primary--text" > Value:</strong> {{ item.value + ".00" }}
+                                    <strong class="accent--text" > Value:</strong> {{ item.value + ".00" }}
                                 </div>
                                 <div>
-                                    <strong class="primary--text" > Serial Number: </strong> {{item.serialNumber}}
+                                    <strong class="accent--text" > Serial Number: </strong> {{item.serialNumber}}
                                 </div>
 
                               </p>
@@ -61,7 +61,7 @@
                     <v-card >
                         <v-card-text>
                             <template >
-                                <v-btn @click.stop="addNewAssetDialog" color="primary" >
+                                <v-btn @click.stop="addNewAssetDialog" color="accent" >
                                     Add Asset
                                 </v-btn>
                             </template>
@@ -71,7 +71,7 @@
                     <v-divider></v-divider>
                     <v-spacer></v-spacer>
                     <v-card-actions>
-                      <v-btn color="primary" @click="returnToCoveredAssets" >Return to Covered Assets</v-btn>
+                      <v-btn color="accent" @click="returnToCoveredAssets" >Return to Covered Assets</v-btn>
                     </v-card-actions>
 
                     </template>
@@ -83,7 +83,7 @@
                     >
                     <v-card>
                         <v-card-title
-                        class="headline primary white--text"
+                        class="headline accent white--text"
                         primary-title
                         >
                         Add/Change Photo
@@ -102,7 +102,7 @@
                     >
                     <v-card>
                         <v-card-title
-                        class="headline primary white--text"
+                        class="headline accent white--text"
                         primary-title
                         >
                         Add Asset
@@ -121,6 +121,12 @@
         </v-layout>
     </v-container>
 </template>
+
+<style lang="css">
+.bye_padding {
+  padding: 0;
+}
+</style>
 
 <script>
 import EditAssetForm from "@/components/EditAssetForm.vue";

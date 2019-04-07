@@ -7,7 +7,7 @@
     </v-layout>
     <v-layout>
       <v-flex>
-        <v-btn @click="openEditDialog(item)" >
+        <v-btn color="primary" @click="openEditDialog(item)" >
           Add Photo
         </v-btn>
       </v-flex>
@@ -78,6 +78,9 @@
 <script>
 import EditAssetForm from "@/components/EditAssetForm.vue";
 export default {
+  components: {
+    EditAssetForm
+  },
   data() {
     return {
       editAssetModal: false,
