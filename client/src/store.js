@@ -7,7 +7,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    FEMA: FEMAAlertData
+    FEMA: FEMAAlertData,
     mockData: mockData,
   },
   mutations: {

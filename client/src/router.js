@@ -26,6 +26,12 @@ export default new Router({
       name: 'AssetCategory',
       props: true,
       component: () => import('./views/AssetCategory.vue')
+    },
+    {
+      path:'/coverages',
+      name:'Coverages',
+      props:false,
+      component: ()=> import('./views/Coverages.vue') 
     }
   ]
 })
