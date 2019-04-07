@@ -57,7 +57,9 @@ export default {
                                 "photoID": 66998,
                                 "URL": "https://marshcdn.aws.com/assets/photos/66998"
                             }
-                        ]
+                        ],
+                        "isClaimed": true,
+                        "isDocumented": false
                     },
                     {
                         "name": "Advance TabCo Bar",
@@ -77,7 +79,9 @@ export default {
                                 "photoID": 66542,
                                 "URL": "https://marshcdn.aws.com/assets/photos/66542"
                             }
-                        ]
+                        ],
+                        "isClaimed": true,
+                        "isDocumented": false
                     },
                     {
                         "name": "Flash Furniture 30'' Square Black Laminate Table Set with 4 Wood Slat",
@@ -89,7 +93,9 @@ export default {
                                 "photoID": 66544,
                                 "URL": "https://images-na.ssl-images-amazon.com/images/I/81k6HHKTP0L._SL1500_.jpg"
                             },
-                        ]
+                        ],
+                        "isClaimed": true,
+                        "isDocumented": false
                     },
                     {
                         "name": "Oklahoma Sound Aristocrat Floor Lectern, Mahogany",
@@ -101,7 +107,9 @@ export default {
                                 "photoID": 66544,
                                 "URL": ""
                             },
-                        ]
+                        ],
+                        "isClaimed": true,
+                        "isDocumented": false
                     },
                     {
                         "name": "2012 Peugeot Blue Van",
@@ -121,7 +129,9 @@ export default {
                                 "photoID": 66547,
                                 "URL": "https://marshcdn.aws.com/assets/photos/66547"
                             }
-                        ]
+                        ],
+                        "isClaimed": true,
+                        "isDocumented": false
                     }
                 ],
                 "claims": [

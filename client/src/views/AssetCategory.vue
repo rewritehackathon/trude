@@ -17,7 +17,7 @@
                     <v-card-title primary-title class="primary headline white--text" >
                         <h1> {{assetType}} </h1>
                     </v-card-title>
-                    
+
                     <template>
                     <v-expansion-panel popout >
                         <v-expansion-panel-content
@@ -25,19 +25,19 @@
                         :key="i"
                         >
                         <template v-slot:header>
-                            <div> 
-                                {{ item.name.substring(0, 15) + "..." }} 
+                            <div>
+                                {{ item.name.substring(0, 15) + "..." }}
                                 <v-icon v-if="item.photos[0].URL" right class="green--text accent-4">
                                     done
-                                </v-icon>   
+                                </v-icon>
                                 <v-icon v-if="!item.photos[0].URL" right class="red--text accent-3">
                                     close
-                                </v-icon>   
+                                </v-icon>
                                 <v-btn @click.stop="openEditDialog(item)" icon flat>
                                     <v-icon right>
                                         edit
                                     </v-icon>
-                                </v-btn>  
+                                </v-btn>
                             </div>
                         </template>
                         <v-card
@@ -67,7 +67,7 @@
                             <template >
                                 <v-btn @click.stop="addNewAssetDialog" color="primary" >
                                     Add Asset
-                                </v-btn>  
+                                </v-btn>
                             </template>
                         </v-card-text>
                     </v-card>
@@ -172,7 +172,7 @@ export default {
       this.addNewAssetModal = true;
     },
     returnToCoveredAssets() {
-      this.$router.push("/coverages");
+      this.$router.push("/assets");
     }
   }
 };

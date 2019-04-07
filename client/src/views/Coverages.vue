@@ -5,7 +5,7 @@
       <h2>Coverages</h2>
     </v-flex>
   </v-layout>
-  <v-layout row align-center>
+  <!-- <v-layout row align-center>
     <v-expansion-panel>
       <v-expansion-panel-content v-for="coverage in coverages">
         <template v-slot:header>
@@ -28,6 +28,13 @@
         </v-card>
       </v-expansion-panel-content>
     </v-expansion-panel>
+  </v-layout> -->
+  <v-layout v-for="coverage in coverages">
+    <v-btn>
+      <router-link to="/assets">
+        {{coverage.name}}
+      </router-link>
+    </v-btn>
   </v-layout>
   </div>
 </template>

@@ -8,8 +8,10 @@
     <v-layout row v-for="type in assetTypes">
       <v-flex>
         <v-btn>
-          {{type}}
-      </v-btn>
+          <router-link :to ="{name: 'AssetCategory', params:{type: type}}">
+            {{type}}
+          </router-link>
+        </v-btn>
     </v-flex>
     </v-layout>
   </div>
@@ -22,7 +24,7 @@ export default {
       return Object.keys(this.$store.getters.assetsByType)
     },
     assetWorth: function(){
-      
+
     }
   }
 }
