@@ -36,6 +36,11 @@ export default {
                         "name": "Workers Compensation",
                         "coverageAmount": "$500,000",
                         "cost": "$2000"
+                    },
+                    {
+                        "name": "Business Interruption",
+                        "coverageAmount": "$500,000",
+                        "cost": "$2000"
                     }
                 ],
                 "assets": [

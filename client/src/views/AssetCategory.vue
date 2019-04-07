@@ -2,21 +2,12 @@
     <v-container>
         <v-layout>
             <v-flex>
-                <v-alert
-                :value="true"
-                color="info"
-                icon="info"
-                outline
-                >
-                The red <v-icon class="red--text accent-3">
-                    close
-                </v-icon> icon indicates we have no photo on file for the listed asset.
-                </v-alert>
-                <v-card>
-
+              <v-card>
                     <v-card-title primary-title class="primary headline white--text" >
                         <h1> {{assetType}} </h1>
                     </v-card-title>
+                <v-card>
+
 
                     <template>
                     <v-expansion-panel popout >
@@ -24,21 +15,18 @@
                         v-for="(item,i) in assetsByType"
                         :key="i"
                         >
-                        <template v-slot:header>
-                            <div>
-                                {{ item.name.substring(0, 15) + "..." }}
-                                <v-icon v-if="item.photos[0].URL" right class="green--text accent-4">
-                                    done
-                                </v-icon>
-                                <v-icon v-if="!item.photos[0].URL" right class="red--text accent-3">
-                                    close
-                                </v-icon>
-                                <v-btn @click.stop="openEditDialog(item)" icon flat>
-                                    <v-icon right>
-                                        edit
+                        <template v-slot:header >
+                            <v-card-text>
+                              <p class="text-lg-left">
+                                    <v-icon v-if="item.photos[0].URL" left class="green--text accent-4">
+                                        photo_camera
                                     </v-icon>
-                                </v-btn>
-                            </div>
+                                    <v-icon v-if="!item.photos[0].URL" left class="red--text accent-3">
+                                        photo_camera
+                                    </v-icon>
+                                    {{ item.name}}
+                              </p>
+                            </v-card-text>
                         </template>
                         <v-card
                         >
@@ -46,7 +34,13 @@
                             :src="item.photos[0].URL || defaultImgURL"
                             :width="'100%'"
                             ></v-img>
-                            <v-card-text>
+                            <v-card-text> 
+                                <v-btn @click.stop="openEditDialog(item)" icon color="primary" large  >
+                                    <v-icon center >
+                                        add_a_photo
+                                    </v-icon>
+                                </v-btn>
+                              <p class="text-md-left" >
                                 <div>
                                     <strong class="primary--text" > Asset:</strong> {{ item.name }}
                                 </div>
@@ -56,6 +50,8 @@
                                 <div>
                                     <strong class="primary--text" > Serial Number: </strong> {{item.serialNumber}}
                                 </div>
+
+                              </p>
 
                             </v-card-text>
                         </v-card>
@@ -119,6 +115,8 @@
                     </v-dialog>
 
                 </v-card>
+
+              </v-card>
             </v-flex>
         </v-layout>
     </v-container>

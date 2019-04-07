@@ -51,30 +51,54 @@
             Finalize Claim
           </router-link>
         </v-btn>
+
+                    <!-- Add Photo Dialog -->
+                    <v-dialog
+                    v-model="editAssetModal"
+                    width="500"
+                    >
+                    <v-card>
+                        <v-card-title
+                        class="headline primary white--text"
+                        primary-title
+                        >
+                        Add/Change Photo
+                        </v-card-title>
+
+                        <EditAssetForm :closeEditDialog="closeEditDialog" :asset="assetToedit" />
+
+                        <v-divider></v-divider>
+                    </v-card>
+                    </v-dialog>
       </v-flex>
     </v-layout>
   </div>
 </template>
 
 <script>
+import EditAssetForm from "@/components/EditAssetForm.vue";
 export default {
-
+  data() {
+    return {
+      editAssetModal: false
+    };
+  },
   computed: {
-    assetsByType: function(){
-      return this.$store.getters.assetsByType
+    assetsByType: function() {
+      return this.$store.getters.assetsByType;
     },
-    allDocumented: function(){
-      let assets = this.$store.state.mockData.customer.policies[0].assets
-      let allDoc = true
-      assets.forEach(item=>{
-        if(item.isClaimed && !item.isDocumented){
-          allDoc = false
+    allDocumented: function() {
+      let assets = this.$store.state.mockData.customer.policies[0].assets;
+      let allDoc = true;
+      assets.forEach(item => {
+        if (item.isClaimed && !item.isDocumented) {
+          allDoc = false;
         }
-      })
-      return allDoc
+      });
+      return allDoc;
     }
   }
-}
+};
 </script>
 
 <style>
