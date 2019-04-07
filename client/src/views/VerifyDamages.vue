@@ -2,7 +2,7 @@
   <div>
     <v-layout>
       <v-flex class='page-title'>
-        <h3>Document Asset Damage</h3>
+        <h2>Document Damage</h2>
       </v-flex>
     </v-layout>
     <v-layout>
@@ -30,7 +30,7 @@
                   </v-switch>
                 </v-flex>
                 <v-flex class = 'item-name' grow>
-                  {{ item.name.length > 35 ? item.name.substring(0, 22) + "..." : item.name}}
+                  {{ item.name.length > 30 ? item.name.substring(0, 30) + "..." : item.name}}
                 </v-flex>
                 <v-flex justify-end shrink>
                   <div class='photo-check control-label'>
@@ -133,6 +133,5 @@ div .v-expansion-panel__header{
  .item-name{
    text-align: left;
    color: var(--v-accent-darken1);
-   font-size: 1.2em;
  }
 </style>

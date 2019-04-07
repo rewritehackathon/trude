@@ -1,16 +1,14 @@
 <template>
     <v-container>
         <v-layout>
+            <v-flex class='page-title'>
+              <h2> {{assetType}} </h2>
+            </v-flex>
+          </v-layout>
+          <v-layout>
             <v-flex>
-              <v-card>
-                    <v-card-title primary-title class="accent headline white--text" >
-                        <h1> {{assetType}} </h1>
-                    </v-card-title>
-                <v-card>
-
-
-                    <template>
-                    <v-expansion-panel popout >
+                <template>
+                  <v-expansion-panel popout >
                         <v-expansion-panel-content
                         v-for="(item,i) in assetsByType"
                         :key="i"
@@ -24,7 +22,9 @@
                                     <v-icon v-if="!item.photos[0].URL" left class="red--text accent-3">
                                         photo_camera
                                     </v-icon>
-                                    {{ item.name}}
+                                    <span class = 'item-name'>
+                                      {{ item.name.length > 30 ? item.name.substring(0, 30) + "..." : item.name}}
+                                    </span>
                               </p>
                             </v-card-text>
                         </template>
@@ -34,7 +34,7 @@
                             :src="item.photos[0].URL || defaultImgURL"
                             :width="'100%'"
                             ></v-img>
-                            <v-card-text> 
+                            <v-card-text>
                                 <v-btn @click.stop="openEditDialog(item)" icon color="accent" large  >
                                     <v-icon center >
                                         add_a_photo
@@ -58,26 +58,16 @@
                         </v-expansion-panel-content>
                     </v-expansion-panel>
 
-                    <v-card >
-                        <v-card-text>
-                            <template >
-                                <v-btn @click.stop="addNewAssetDialog" color="accent" >
-                                    Add Asset
-                                </v-btn>
-                            </template>
-                        </v-card-text>
-                    </v-card>
 
-                    <v-divider></v-divider>
-                    <v-spacer></v-spacer>
-                    <v-card-actions>
-                      <v-btn color="accent" @click="returnToCoveredAssets" >Return to Covered Assets</v-btn>
-                    </v-card-actions>
+    <v-btn class='nav-btn' @click.stop="addNewAssetDialog" >
+          Add Asset
+    </v-btn>
 
-                    </template>
-
+    <v-spacer></v-spacer>
+      <v-btn class='nav-btn' @click="returnToCoveredAssets" >Return to Covered Assets</v-btn>
+      </template>
                     <!-- Edit Asset Dialog -->
-                    <v-dialog
+      <v-dialog
                     v-model="editAssetModal"
                     width="500"
                     >
@@ -96,7 +86,7 @@
                     </v-dialog>
 
                     <!-- Add Asset dialog -->
-                    <v-dialog
+                <v-dialog
                     v-model="addNewAssetModal"
                     width="500"
                     >
@@ -109,14 +99,9 @@
                         </v-card-title>
 
                         <AddAssetForm :closeDialog="closeAddDialog" />
-
                         <v-divider></v-divider>
                     </v-card>
-                    </v-dialog>
-
-                </v-card>
-
-              </v-card>
+                </v-dialog>
             </v-flex>
         </v-layout>
     </v-container>
@@ -181,3 +166,13 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+  .v-expansion-panel li {
+    min-width: 100% !important;
+  }
+  .item-name{
+    text-align: left;
+    color: var(--v-accent-darken1);
+  }
+</style>

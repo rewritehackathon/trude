@@ -2,7 +2,7 @@
   <div>
     <v-layout row>
       <v-flex class='page-title'>
-        <h3>Asset Categories</h3>
+        <h2>Asset Categories</h2>
       </v-flex>
     </v-layout>
     <v-layout row v-for="type in assetTypes">
