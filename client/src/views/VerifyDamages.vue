@@ -22,7 +22,7 @@
           </template>
           <v-card v-for="item in category">
             <v-card-text>
-              <v-layout row align-center>
+              <v-layout row align-center justify-space-between>
                 <v-flex shrink>
                   <span class='control-label'>Claimed:</span>
                   <v-switch
@@ -30,7 +30,7 @@
                   </v-switch>
                 </v-flex>
                 <v-flex class = 'item-name' grow>
-                  {{ item.name.length > 30 ? item.name.substring(0, 30) + "..." : item.name}}
+                  {{ item.name.length > 27 ? item.name.substring(0, 27) + "..." : item.name}}
                 </v-flex>
                 <v-flex justify-end shrink>
                   <div class='photo-check control-label'>
