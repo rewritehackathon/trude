@@ -109,6 +109,7 @@
                         Add Asset
                         </v-card-title>
 
+                        <AddAssetForm :closeDialog="closeAddDialog" />
 
                         <v-divider></v-divider>
                     </v-card>
@@ -122,11 +123,12 @@
 
 <script>
 import EditAssetForm from "@/components/EditAssetForm.vue";
-
+import AddAssetForm from "@/components/AddAssetForm.vue";
 export default {
   name: "AssetCategory",
   components: {
-    EditAssetForm
+    EditAssetForm,
+    AddAssetForm
   },
   props: ["type"],
   data() {
@@ -159,6 +161,9 @@ export default {
     closeEditDialog() {
       this.editAssetModal = false;
       this.assetToedit = null;
+    },
+    closeAddDialog() {
+      this.addNewAssetModal = false;
     },
     addNewAssetDialog() {
       this.addNewAssetModal = true;

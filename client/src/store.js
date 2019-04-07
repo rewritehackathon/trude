@@ -18,11 +18,17 @@ export default new Vuex.Store({
         }
         return asset
       })
+    },
+    addNewAsset(state, newAsset) {
+      state.mockData.customer.policies[0].assets.push(newAsset)
     }
   },
   actions: {
     addedImageToSrc({ commit }, updateObj) {
       commit("addedImageToSrc", updateObj)
+    },
+    addAsset({ commit }, newAssetObj) {
+      commit("addNewAsset", newAssetObj)
     }
   },
   getters: {

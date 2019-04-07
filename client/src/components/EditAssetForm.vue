@@ -28,7 +28,6 @@ export default {
   },
   methods: {
     onFileSelected(event) {
-      console.log();
       this.slectedFile = event.target.files[0];
     },
     onUpload() {
