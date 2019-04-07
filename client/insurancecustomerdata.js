@@ -94,12 +94,12 @@ export default {
                     {
                         "name": "Oklahoma Sound Aristocrat Floor Lectern, Mahogany",
                         "assetType": "Furniture",
-                        "serialNumber": "1234RTL0916010001",
-                        "value": "$350",
+                        "serialNumber": "12GHL239010001",
+                        "value": "$260",
                         "photos": [
                             {
                                 "photoID": 66544,
-                                "URL": "https://images-na.ssl-images-amazon.com/images/I/81k6HHKTP0L._SL1500_.jpg"
+                                "URL": ""
                             },
                         ]
                     },
