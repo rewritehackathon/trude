@@ -11,7 +11,6 @@ app.get('/', function (req, res) {
 
 //clientside application sends post request
 app.post('/transaction', function (req, res) {
-  res.send('POST request to the homepage');
   //load the fabric config
   var client = Client.loadFromConfig('test/fixtures/network.yaml');
   //set up the stores
