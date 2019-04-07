@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-layout row>
-      <v-flex>
+      <v-flex class='page-title'>
         <h3>Asset Categories</h3>
       </v-flex>
     </v-layout>
