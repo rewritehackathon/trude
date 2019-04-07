@@ -28,34 +28,39 @@
 
 <script>
 // @ is an alias to /src
-  import moment from 'moment'
+import moment from "moment";
 
 export default {
-
-  name: 'home',
-  components: {
-  },
+  name: "home",
+  components: {},
   computed: {
-    incidentBegin: function(){
-      return moment(this.$store.state.FEMA.incidentBeginDate).format("dddd, MMMM Do YYYY")
+    incidentBegin: function() {
+      return moment(this.$store.state.FEMA.incidentBeginDate).format(
+        "dddd, MMMM Do YYYY"
+      );
     },
-    incidentEnd: function(){
-      return moment(this.$store.state.FEMA.incidentEndDate).format("dddd, MMMM Do YYYY")
+    incidentEnd: function() {
+      return moment(this.$store.state.FEMA.incidentEndDate).format(
+        "dddd, MMMM Do YYYY"
+      );
     }
   },
   methods: {
-    goToCoverages: function(){
-      this.$router.push('/coverages')
+    goToCoverages: function() {
+      this.$router.push("/coverages");
     }
   }
-}
+};
 </script>
 
 <style>
-  button{
-    width: 100%;
-  }
-  .v-content__wrap{
-    background-image: linear-gradient(var(--v-primary-base), var(--v-secondary-base));
-  }
+button {
+  width: 100%;
+}
+.v-content__wrap {
+  background-image: linear-gradient(
+    var(--v-primary-base),
+    var(--v-secondary-base)
+  );
+}
 </style>
