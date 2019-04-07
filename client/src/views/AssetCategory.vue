@@ -19,7 +19,7 @@
                     </v-card-title>
                     
                     <template>
-                    <v-expansion-panel>
+                    <v-expansion-panel popout >
                         <v-expansion-panel-content
                         v-for="(item,i) in assetsByType"
                         :key="i"
@@ -33,7 +33,7 @@
                                 <v-icon v-if="!item.photos[0].URL" right class="red--text accent-3">
                                     close
                                 </v-icon>   
-                                <v-btn @click.stop="ClickEvent" icon flat>
+                                <v-btn @click.stop="openEditDialog(item)" icon flat>
                                     <v-icon right>
                                         edit
                                     </v-icon>
@@ -61,8 +61,58 @@
                         </v-card>
                         </v-expansion-panel-content>
                     </v-expansion-panel>
+
+                    <v-expansion-panel readonly >
+                        <v-expansion-panel-content>
+                            <template v-slot:header >
+                                Add Asset
+                                <v-btn @click.stop="addNewAssetDialog" icon flat>
+                                    <v-icon right>
+                                        add
+                                    </v-icon>
+                                </v-btn>  
+                            </template>
+                        </v-expansion-panel-content>
+                    </v-expansion-panel>
+
                     </template>
 
+                    <!-- Edit Asset Dialog -->
+                    <v-dialog
+                    v-model="editAssetModal"
+                    width="500"
+                    >
+                    <v-card>
+                        <v-card-title
+                        class="headline primary white--text"
+                        primary-title
+                        >
+                        Add/Change Photo
+                        </v-card-title>
+
+                        <EditAssetForm :closeEditDialog="closeEditDialog" :asset="assetToedit" />
+
+                        <v-divider></v-divider>
+                    </v-card>
+                    </v-dialog>
+
+                    <!-- Add Asset dialog -->
+                    <v-dialog
+                    v-model="addNewAssetModal"
+                    width="500"
+                    >
+                    <v-card>
+                        <v-card-title
+                        class="headline primary white--text"
+                        primary-title
+                        >
+                        Add Asset
+                        </v-card-title>
+
+
+                        <v-divider></v-divider>
+                    </v-card>
+                    </v-dialog>
 
                 </v-card>
             </v-flex>
@@ -71,12 +121,20 @@
 </template>
 
 <script>
+import EditAssetForm from "@/components/EditAssetForm.vue";
+
 export default {
   name: "AssetCategory",
+  components: {
+    EditAssetForm
+  },
   props: ["type"],
   data() {
     return {
-      defaultImgURL: "https://semantic-ui.com/images/wireframe/image.png"
+      defaultImgURL: "https://semantic-ui.com/images/wireframe/image.png",
+      editAssetModal: false,
+      assetToedit: null,
+      addNewAssetModal: false
     };
   },
   computed: {
@@ -93,8 +151,17 @@ export default {
     }
   },
   methods: {
-    ClickEvent() {
-      console.log("it fired");
+    openEditDialog(item) {
+      this.editAssetModal = true;
+      this.assetToedit = item;
+      console.log("it fired: ", item);
+    },
+    closeEditDialog() {
+      this.editAssetModal = false;
+      this.assetToedit = null;
+    },
+    addNewAssetDialog() {
+      this.addNewAssetModal = true;
     }
   }
 };

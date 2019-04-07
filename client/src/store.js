@@ -11,10 +11,19 @@ export default new Vuex.Store({
     mockData: mockData,
   },
   mutations: {
-
+    addedImageToSrc(state, updateObj) {
+      state.mockData.customer.policies[0].assets.forEach(asset => {
+        if (asset.serialNumber === updateObj.asset.serialNumber) {
+          asset.photos[0].URL = updateObj.src
+        }
+        return asset
+      })
+    }
   },
   actions: {
-
+    addedImageToSrc({ commit }, updateObj) {
+      commit("addedImageToSrc", updateObj)
+    }
   },
   getters: {
     assetsByType(state) {
