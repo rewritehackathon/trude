@@ -57,12 +57,11 @@
           xs12
           md4
         >   
-            <!-- <label> Asset Photo </label>
+        Add Photo
           <input
             type="file"
-            @change="onFileSelected"
           >
-           </input> -->
+           </input> 
         </v-flex>
         <v-flex
           xs12

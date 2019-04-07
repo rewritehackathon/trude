@@ -15,18 +15,18 @@
 </template>
 
 <script>
-export default{
+export default {
   computed: {
-    coverages:  function(){
-      return this.$store.state.mockData.customer.policies[0].coverage
-    },
+    coverages: function() {
+      return this.$store.state.mockData.customer.policies[0].coverage;
+    }
   },
   methods: {
-    goToAssets: function(){
-      this.$router.push('/assets')
+    goToAssets: function() {
+      this.$router.push("/assets");
     }
   }
-}
+};
 </script>
 
 <style>

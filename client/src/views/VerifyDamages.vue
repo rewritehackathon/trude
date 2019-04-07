@@ -7,7 +7,7 @@
     </v-layout>
     <v-layout>
       <v-flex>
-        <v-btn class='nav-btn'>
+        <v-btn class='nav-btn' @click="openEditDialog(item)">
           Add Photo
         </v-btn>
       </v-flex>
@@ -51,30 +51,69 @@
         <v-btn v-if="allDocumented" class='nav-btn' to='/confirm'>
             Finalize Claim
         </v-btn>
+
+                    <!-- Add Photo Dialog -->
+                    <v-dialog
+                    v-model="editAssetModal"
+                    width="500"
+                    >
+                    <v-card>
+                        <v-card-title
+                        class="headline primary white--text"
+                        primary-title
+                        >
+                        Add/Change Photo
+                        </v-card-title>
+
+                        <EditAssetForm :closeEditDialog="closeEditDialog" :asset="assetToedit" />
+
+                        <v-divider></v-divider>
+                    </v-card>
+                    </v-dialog>
       </v-flex>
     </v-layout>
   </div>
 </template>
 
 <script>
+import EditAssetForm from "@/components/EditAssetForm.vue";
 export default {
-
+  components: {
+    EditAssetForm
+  },
+  data() {
+    return {
+      editAssetModal: false,
+      assetToedit: null
+    };
+  },
   computed: {
-    assetsByType: function(){
-      return this.$store.getters.assetsByType
+    assetsByType: function() {
+      return this.$store.getters.assetsByType;
     },
-    allDocumented: function(){
-      let assets = this.$store.state.mockData.customer.policies[0].assets
-      let allDoc = true
-      assets.forEach(item=>{
-        if(item.isClaimed && !item.isDocumented){
-          allDoc = false
+    allDocumented: function() {
+      let assets = this.$store.state.mockData.customer.policies[0].assets;
+      let allDoc = true;
+      assets.forEach(item => {
+        if (item.isClaimed && !item.isDocumented) {
+          allDoc = false;
         }
-      })
-      return allDoc
+      });
+      return allDoc;
+    }
+  },
+  methods: {
+    openEditDialog(item) {
+      this.editAssetModal = true;
+      this.assetToedit = item;
+      console.log("it fired: ", item);
+    },
+    closeEditDialog() {
+      this.editAssetModal = false;
+      this.assetToedit = null;
     }
   }
-}
+};
 </script>
 
 <style>
