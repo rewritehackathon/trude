@@ -64,10 +64,17 @@
           >
            </input> -->
         </v-flex>
+        <v-flex
+          xs12
+          md12
+          sm12
+          lg12
+        >
+          <v-btn color="primary" @click="handleAddAsset" >
+              Add Asset
+          </v-btn>
 
-        <v-btn @click="handleAddAsset" >
-            Add Asset
-        </v-btn>
+        </v-flex>
       </v-layout>
     </v-container>
   </v-form>

@@ -62,18 +62,21 @@
                         </v-expansion-panel-content>
                     </v-expansion-panel>
 
-                    <v-expansion-panel readonly >
-                        <v-expansion-panel-content>
-                            <template v-slot:header >
-                                Add Asset
-                                <v-btn @click.stop="addNewAssetDialog" icon flat>
-                                    <v-icon right>
-                                        add
-                                    </v-icon>
+                    <v-card >
+                        <v-card-text>
+                            <template >
+                                <v-btn @click.stop="addNewAssetDialog" color="primary" >
+                                    Add Asset
                                 </v-btn>  
                             </template>
-                        </v-expansion-panel-content>
-                    </v-expansion-panel>
+                        </v-card-text>
+                    </v-card>
+
+                    <v-divider></v-divider>
+                    <v-spacer></v-spacer>
+                    <v-card-actions>
+                      <v-btn color="primary" @click="returnToCoveredAssets" >Return to Covered Assets</v-btn>
+                    </v-card-actions>
 
                     </template>
 
@@ -167,6 +170,9 @@ export default {
     },
     addNewAssetDialog() {
       this.addNewAssetModal = true;
+    },
+    returnToCoveredAssets() {
+      this.$router.push("/coverages");
     }
   }
 };
