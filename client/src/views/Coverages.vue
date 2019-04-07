@@ -30,7 +30,7 @@
     </v-expansion-panel>
   </v-layout> -->
   <v-layout v-for="coverage in coverages">
-    <v-btn to="/assets">
+    <v-btn color="accent"  to="/assets">
         {{coverage.name}}
     </v-btn>
   </v-layout>
